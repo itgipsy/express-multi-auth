@@ -1,0 +1,18 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#indexcontent {
+  margin: auto;
+  max-width: 800px;
+}
+
+.form-control-feedback {
+  width: 15px;
+  height: 15px;
+}

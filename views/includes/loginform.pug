@@ -1,0 +1,16 @@
+//- includes/loginform.pug
+
+form(action='/auth/login' method='POST')
+  .row.form-group
+    label.col-sm-4(for='email_input') Email address
+    .col-sm-5
+      input.form-control#email_input(type='email' name='email' placeholder='Enter your email address')
+  .row.form-group
+    label.col-sm-4(for='password_input') Password
+    .col-sm-5
+      input.form-control#password_input(type='password' name='password' placeholder='Enter your password')
+  button.btn.btn-primary.col-sm-offset-3#login_button(type='submit') Login
+
+p Not a user yet? Click 
+  a(href='/register') here
+  |  to register
