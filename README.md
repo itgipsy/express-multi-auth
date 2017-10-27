@@ -36,7 +36,12 @@ in the config/secrets.js to https.passphrase. If you remove the passphrase, set 
 this configuration option to an empty string ('')
 
 ### Configuring social logins
-TBA
+First of all, you will need App/API credentials from Facebook and Google to enable the OAuth authentication.
+* [Register Facebook application](https://developers.facebook.com/docs/apps/register/)
+* [Create Google Cloud Project credentials](https://developers.google.com/identity/sign-in/web/devconsole-project)
+Once you have your application/client id and secret, add them to the `config/secrets.js` file. If haven't done
+already, rename the config/secret-sample.cfg to config/secrets.js first.
+Change the callback URLs in the `config/appcfg.js` file to point to your host.
 
 ## Run the server
 You can run the server by `npm start`, by default it will listen on ports 8080 and 8443
