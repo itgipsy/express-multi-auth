@@ -18,6 +18,20 @@ module.exports = {
     crt: 'config/cert/server.crt',
     key: 'config/cert/server.key',
     passphrase: secrets.https.passphrase
+  },
+  auth: {
+    google: {
+      enabled: true,
+      clientId: secrets.google.clientId,
+      clientSecret: secrets.google.clientSecret,
+      callbackURL: 'https://example.itgipsy.com:8443/auth/google/callback'
+    },
+    facebook: {
+      enabled: true,
+      appId: secrets.facebook.appId,
+      appSecret: secrets.facebook.appSecret,
+      callbackURL: 'https://example.itgipsy.com:8443/auth/facebook/callback'
+    }
   }
 };
 

@@ -8,7 +8,7 @@ const flash = require('express-flash');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 const passport = require('passport');
-const User = require('./models/user');
+require('./controllers/passport')(passport);
 // configs
 const config = require('./config/appcfg');
 // routers
@@ -59,11 +59,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/users', users);
-
-// configure passport
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

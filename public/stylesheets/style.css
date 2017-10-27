@@ -16,3 +16,11 @@ a {
   width: 15px;
   height: 15px;
 }
+
+#facebook_login {
+  margin-left: 10px;
+}
+
+#google_login {
+  margin-left: 10px;
+}

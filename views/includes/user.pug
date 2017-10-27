@@ -3,7 +3,16 @@ if user
   #userinfo.card
     h4.card-header You are logged in
     .card-block
-      p.card-text Your email address is #{ user.email }
+      if user.email
+        p.card-text Your local email address is #{ user.email }
+      if user.facebook.email
+        p.card-text Your Facebook email address is #{ user.facebook.email }
+      if user.google.email
+        p.card-text Your Google email address is #{ user.google.email }
     a#logout_button.btn.btn-primary(href='/auth/logout') Logout
+    if !user.facebook.email
+      a#facebook_login.btn.btn-primary(href='/auth/facebook/login') Link w Facebook
+    if !user.google.email
+      a#google_login.btn.btn-primary(href='/auth/google/login') Link w Google
 else
   .alert.alert-danger Something went wrong. User information not found
